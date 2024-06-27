@@ -1,5 +1,10 @@
 
 questa: questa_build_tb questa_sim
+clean:
+	rm -fr obj* *.log
+
+vlt : 
+	verilator --binary --exe --cc --main --timing --assert -f vlt.f > vlt_comp.log 2>&1
 
 
 questa_build_tb : 
