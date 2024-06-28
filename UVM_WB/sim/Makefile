@@ -20,6 +20,10 @@ sim:
 
 clean:
 	rm -rf work transcript
+	rm -fr obj* *.log
+
+vlt : clean
+	verilator --binary --exe --cc --main --timing --assert -f vlt.f > vlt_comp.log 2>&1
 
 
 vivado_build_dv:
